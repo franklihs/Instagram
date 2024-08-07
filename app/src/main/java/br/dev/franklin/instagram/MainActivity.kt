@@ -5,6 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import br.dev.franklin.instagram.ui.theme.InstagramTheme
+import br.dev.franklin.instagram.ui.view.HomeScreen
 
 class MainActivity : ComponentActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,6 +13,7 @@ class MainActivity : ComponentActivity() {
     enableEdgeToEdge()
     setContent {
       InstagramTheme {
+        HomeScreen()
       }
     }
   }
