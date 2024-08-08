@@ -14,21 +14,31 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import br.dev.franklin.instagram.R
+import br.dev.franklin.instagram.ui.theme.spacingLarge
+import br.dev.franklin.instagram.ui.theme.spacingMedium
 
 @Composable
 fun InstagramToolBar() {
-  Box(modifier = Modifier.background(MaterialTheme.colorScheme.background).safeDrawingPadding()) {
+
+  val instagramLabel = stringResource(id = R.string.app_name)
+
+  Box(
+    modifier = Modifier
+      .background(MaterialTheme.colorScheme.background)
+      .safeDrawingPadding()
+  ) {
     Row(
       modifier = Modifier
-        .padding(horizontal = 16.dp)
+        .padding(horizontal = spacingLarge)
         .height(56.dp)
     ) {
 
       Text(
-        text = "Instagram",
+        text = instagramLabel,
         modifier = Modifier.weight(1f),
         style = MaterialTheme.typography.headlineLarge
       )
@@ -37,17 +47,17 @@ fun InstagramToolBar() {
         painter = painterResource(R.drawable.ic_notification),
         modifier = Modifier
           .size(32.dp)
-          .padding(end = 8.dp)
+          .padding(end = spacingMedium)
           .align(Alignment.CenterVertically),
-        contentDescription = "Notification icon in toolbar."
+        contentDescription = stringResource(R.string.content_description_notification_icon)
       )
       Image(
         painter = painterResource(R.drawable.ic_message),
         modifier = Modifier
           .size(32.dp)
-          .padding(start = 8.dp)
+          .padding(start = spacingMedium)
           .align(Alignment.CenterVertically),
-        contentDescription = "Direct message (DM) icon in toolbar."
+        contentDescription = stringResource(R.string.content_description_message_icon)
       )
     }
   }
