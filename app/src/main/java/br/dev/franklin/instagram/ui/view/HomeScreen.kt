@@ -16,7 +16,7 @@ fun HomeScreen() {
     .fillMaxSize()
     .background(MaterialTheme.colorScheme.background)) {
     InstagramToolBar()
-    StoryItem(story = Story(userNickName = "Jane Doe", userAvatar = "https://wow.zamimg.com/uploads/screenshots/normal/177061-p%C3%ADcaro-human-rogue-by-glenn-rane.jpg"))
+    StoryItem(story = Story(userNickName = "janedoewithjohndeere", userAvatar = "https://wow.zamimg.com/uploads/screenshots/normal/177061-p%C3%ADcaro-human-rogue-by-glenn-rane.jpg"))
   }
 }
 

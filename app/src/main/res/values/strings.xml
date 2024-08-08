@@ -2,4 +2,5 @@
     <string name="app_name">Instagram</string>
     <string name="content_description_notification_icon">Notification icon in toolbar.</string>
     <string name="content_description_message_icon">Direct message (DM) icon in toolbar.</string>
+    <string name="content_description_story" formated="true">Story de %s não visualizado.</string>
 </resources>
