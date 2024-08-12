@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import br.dev.franklin.instagram.data.model.Feed
 import br.dev.franklin.instagram.data.model.Story
 import br.dev.franklin.instagram.data.repository.stories
 import br.dev.franklin.instagram.ui.theme.DividerColor
@@ -28,6 +29,17 @@ fun HomeScreen() {
     StoryList(stories = stories)
 
     HorizontalDivider(thickness = 0.2.dp, color = DividerColor)
+
+    FeedItem(
+      feed = Feed(
+        userNickName = "John Deere",
+        localName = "Brasil zil zil zil zil zil",
+        userAvatar = "https://www.deere.com/assets/images/common/our-company/history/JD_Trademark_Current_884x663.png",
+        imageUrl = "https://www.deere.es/assets/images/region-2/tractors/large/9r-series/9rx-490-640-9rx-r2g035179-large.jpg",
+        description = "O 9RX 490-640 é alimentado por um motor JD14 com até 691 hp e aumenta a produtividade com uma notável capacidade de lastro de até 30.391 kg.",
+        postedAgo = "Há 2 horas"
+      )
+    )
   }
 }
 
