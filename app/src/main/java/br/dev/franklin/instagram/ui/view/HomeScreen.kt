@@ -5,11 +5,15 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.itemsIndexed
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import br.dev.franklin.instagram.data.Story
+import androidx.compose.ui.unit.dp
+import br.dev.franklin.instagram.data.model.Story
+import br.dev.franklin.instagram.data.repository.stories
+import br.dev.franklin.instagram.ui.theme.DividerColor
 
 @Composable
 fun HomeScreen() {
@@ -21,20 +25,9 @@ fun HomeScreen() {
   ) {
     InstagramToolBar()
 
-    val stories = listOf(
-      Story(userNickName = "janedoewithjohndeere", userAvatar = "https://www.tecnologiahorticola.com/wp-content/uploads/2024/03/01_John-Deere-S7-900-combine-harvesting-wheat-min-1280x640.jpg"),
-      Story(userNickName = "janejohndeere", userAvatar = "https://www.tecnologiahorticola.com/wp-content/uploads/2024/03/01_John-Deere-S7-900-combine-harvesting-wheat-min-1280x640.jpg"),
-      Story(userNickName = "jane", userAvatar = "https://www.tecnologiahorticola.com/wp-content/uploads/2024/03/01_John-Deere-S7-900-combine-harvesting-wheat-min-1280x640.jpg"),
-      Story(userNickName = "johndeere", userAvatar = "https://www.tecnologiahorticola.com/wp-content/uploads/2024/03/01_John-Deere-S7-900-combine-harvesting-wheat-min-1280x640.jpg"),
-      Story(userNickName = "janejohn", userAvatar = "https://www.tecnologiahorticola.com/wp-content/uploads/2024/03/01_John-Deere-S7-900-combine-harvesting-wheat-min-1280x640.jpg"),
-      Story(userNickName = "janewithjohn", userAvatar = "https://www.tecnologiahorticola.com/wp-content/uploads/2024/03/01_John-Deere-S7-900-combine-harvesting-wheat-min-1280x640.jpg"),
-      Story(userNickName = "doewithdeere", userAvatar = "https://www.tecnologiahorticola.com/wp-content/uploads/2024/03/01_John-Deere-S7-900-combine-harvesting-wheat-min-1280x640.jpg"),
-      Story(userNickName = "j", userAvatar = "https://www.tecnologiahorticola.com/wp-content/uploads/2024/03/01_John-Deere-S7-900-combine-harvesting-wheat-min-1280x640.jpg"),
-      Story(userNickName = "janedoewithjohndeere", userAvatar = "https://www.tecnologiahorticola.com/wp-content/uploads/2024/03/01_John-Deere-S7-900-combine-harvesting-wheat-min-1280x640.jpg"),
-      Story(userNickName = "janedoewithjohndeere", userAvatar = "https://www.tecnologiahorticola.com/wp-content/uploads/2024/03/01_John-Deere-S7-900-combine-harvesting-wheat-min-1280x640.jpg"),
-    )
-
     StoryList(stories = stories)
+
+    HorizontalDivider(thickness = 0.2.dp, color = DividerColor)
   }
 }
 
