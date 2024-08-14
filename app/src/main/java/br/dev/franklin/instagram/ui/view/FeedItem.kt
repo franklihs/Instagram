@@ -1,5 +1,6 @@
 package br.dev.franklin.instagram.ui.view
 
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
@@ -20,13 +21,17 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import br.dev.franklin.instagram.R
 import br.dev.franklin.instagram.data.model.Feed
+import br.dev.franklin.instagram.ui.theme.Gray
 import br.dev.franklin.instagram.ui.theme.spacingLarge
 import br.dev.franklin.instagram.ui.theme.spacingMedium
 import br.dev.franklin.instagram.ui.theme.spacingSmall
@@ -103,27 +108,12 @@ fun FeedItem(feed: Feed) {
         .height(40.dp)
         .padding(start = spacingMedium, top = spacingLarge),
     ) {
-      Image(
-        painter = painterResource(id = likeIcon),
-        contentDescription = likeContentDesc,
-        modifier = Modifier
-          .size(40.dp)
-          .padding(end = spacingLarge)
-      )
-      Image(
-        painter = painterResource(id = commentIcon),
-        contentDescription = commentContentDesc,
-        modifier = Modifier
-          .size(40.dp)
-          .padding(end = spacingLarge)
-      )
-      Image(
-        painter = painterResource(id = messageIcon),
-        contentDescription = messageContentDesc,
-        modifier = Modifier
-          .size(40.dp)
-          .padding(end = spacingLarge)
-      )
+      FeedIcons(icon = likeIcon, contentDescription = likeContentDesc)
+
+      FeedIcons(icon = commentIcon, contentDescription = commentContentDesc)
+
+      FeedIcons(icon = messageIcon, contentDescription = messageContentDesc)
+
       Image(
         painter = painterResource(id = bookmarkIcon),
         contentDescription = bookmarkContentDesc,
@@ -134,7 +124,53 @@ fun FeedItem(feed: Feed) {
           .wrapContentWidth(align = Alignment.End)
       )
     }
+
+    Row(
+      modifier = Modifier
+        .padding(horizontal = spacingSmall)
+        .padding(top = spacingLarge)
+    ) {
+
+      val description = buildAnnotatedString {
+        withStyle(style = SpanStyle(fontWeight = FontWeight.Bold)) {
+          append(feed.userNickName)
+        }
+        append(" ")
+        append(feed.description)
+      }
+
+      Text(
+        text = description,
+        modifier = Modifier.padding(horizontal = spacingMedium),
+        maxLines = 3,
+        overflow = TextOverflow.Ellipsis,
+        textAlign = TextAlign.Start
+      )
+    }
+
+    Text(
+      text = feed.postedAgo,
+      modifier = Modifier.padding(start = 12.dp, top = spacingSmall),
+      maxLines = 1,
+      color = Gray,
+      overflow = TextOverflow.Ellipsis,
+      textAlign = TextAlign.Start
+    )
   }
+}
+
+@Composable
+fun FeedIcons(
+  @DrawableRes icon: Int,
+  contentDescription: String
+) {
+  Image(
+    painter = painterResource(id = icon),
+    contentDescription = contentDescription,
+    modifier = Modifier
+      .size(40.dp)
+      .padding(end = spacingLarge)
+  )
 }
 
 @Preview(showBackground = true)
