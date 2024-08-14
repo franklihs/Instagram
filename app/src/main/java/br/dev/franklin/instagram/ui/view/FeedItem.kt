@@ -1,5 +1,6 @@
 package br.dev.franklin.instagram.ui.view
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -8,13 +9,16 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.wrapContentWidth
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
@@ -33,8 +37,17 @@ import com.bumptech.glide.integration.compose.GlideImage
 @Composable
 fun FeedItem(feed: Feed) {
 
+  val likeIcon = R.drawable.ic_notification
+  val commentIcon = R.drawable.ic_comment
+  val messageIcon = R.drawable.ic_message
+  val bookmarkIcon = R.drawable.ic_bookmark
+
   val userAvatarContentDesc = stringResource(R.string.content_description_feed_avatar)
   val feedImageContentDesc = stringResource(R.string.content_description_feed_image)
+  val likeContentDesc = stringResource(R.string.content_description_like_button)
+  val commentContentDesc = stringResource(R.string.content_description_comment_button)
+  val messageContentDesc = stringResource(R.string.content_description_message_button)
+  val bookmarkContentDesc = stringResource(R.string.content_description_bookmark_button)
 
   Column(modifier = Modifier.background(MaterialTheme.colorScheme.background)) {
     Row(
@@ -83,6 +96,44 @@ fun FeedItem(feed: Feed) {
         .fillMaxWidth(),
       contentScale = ContentScale.Crop
     )
+
+    Row(
+      modifier = Modifier
+        .fillMaxWidth()
+        .height(40.dp)
+        .padding(start = spacingMedium, top = spacingLarge),
+    ) {
+      Image(
+        painter = painterResource(id = likeIcon),
+        contentDescription = likeContentDesc,
+        modifier = Modifier
+          .size(40.dp)
+          .padding(end = spacingLarge)
+      )
+      Image(
+        painter = painterResource(id = commentIcon),
+        contentDescription = commentContentDesc,
+        modifier = Modifier
+          .size(40.dp)
+          .padding(end = spacingLarge)
+      )
+      Image(
+        painter = painterResource(id = messageIcon),
+        contentDescription = messageContentDesc,
+        modifier = Modifier
+          .size(40.dp)
+          .padding(end = spacingLarge)
+      )
+      Image(
+        painter = painterResource(id = bookmarkIcon),
+        contentDescription = bookmarkContentDesc,
+        modifier = Modifier
+          .size(40.dp)
+          .padding(end = spacingMedium)
+          .weight(1f)
+          .wrapContentWidth(align = Alignment.End)
+      )
+    }
   }
 }
 
