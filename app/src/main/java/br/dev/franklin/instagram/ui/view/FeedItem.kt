@@ -3,6 +3,7 @@ package br.dev.franklin.instagram.ui.view
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -15,9 +16,14 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -46,6 +52,7 @@ import com.bumptech.glide.integration.compose.GlideImage
 fun FeedItem(feed: Feed) {
 
   val likeIcon = R.drawable.ic_notification
+  val likedIcon = R.drawable.ic_liked
   val commentIcon = R.drawable.ic_comment
   val messageIcon = R.drawable.ic_message
   val bookmarkIcon = R.drawable.ic_bookmark
@@ -57,7 +64,12 @@ fun FeedItem(feed: Feed) {
   val messageContentDesc = stringResource(R.string.content_description_message_button)
   val bookmarkContentDesc = stringResource(R.string.content_description_bookmark_button)
 
-  val iconsColor =MaterialTheme.colorScheme.onBackground
+  var isLiked by rememberSaveable {
+    mutableStateOf(false)
+  }
+
+  val iconsColor = MaterialTheme.colorScheme.onBackground
+  val likedColor = if (isLiked) Color.Red else iconsColor
 
   Column(modifier = Modifier.background(MaterialTheme.colorScheme.background)) {
     Row(
@@ -113,11 +125,15 @@ fun FeedItem(feed: Feed) {
         .height(40.dp)
         .padding(start = spacingMedium, top = spacingLarge),
     ) {
-      FeedIcons(icon = likeIcon, contentDescription = likeContentDesc)
+      FeedIcons(
+        icon = if (isLiked) likedIcon else likeIcon,
+        contentDescription = likeContentDesc,
+        color = likedColor
+      ) { isLiked = !isLiked }
 
-      FeedIcons(icon = commentIcon, contentDescription = commentContentDesc)
+      FeedIcons(icon = commentIcon, contentDescription = commentContentDesc, color = iconsColor) {}
 
-      FeedIcons(icon = messageIcon, contentDescription = messageContentDesc)
+      FeedIcons(icon = messageIcon, contentDescription = messageContentDesc, color = iconsColor) {}
 
       Image(
         painter = painterResource(id = bookmarkIcon),
@@ -167,16 +183,16 @@ fun FeedItem(feed: Feed) {
 
 @Composable
 fun FeedIcons(
-  @DrawableRes icon: Int,
-  contentDescription: String
+  @DrawableRes icon: Int, contentDescription: String, color: Color, onClick: () -> Unit
 ) {
   Image(
     painter = painterResource(id = icon),
     contentDescription = contentDescription,
     modifier = Modifier
       .size(40.dp)
-      .padding(end = spacingLarge),
-    colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onBackground)
+      .padding(end = spacingLarge)
+      .clickable { onClick() },
+    colorFilter = ColorFilter.tint(color)
   )
 }
 
