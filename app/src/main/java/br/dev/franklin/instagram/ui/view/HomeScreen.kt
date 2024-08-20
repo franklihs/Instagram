@@ -15,7 +15,7 @@ import br.dev.franklin.instagram.data.model.Feed
 import br.dev.franklin.instagram.data.model.Story
 import br.dev.franklin.instagram.data.repository.feedList
 import br.dev.franklin.instagram.data.repository.storiesList
-import br.dev.franklin.instagram.ui.theme.DividerColor
+import br.dev.franklin.instagram.ui.theme.InstagramTheme
 
 @Composable
 fun HomeScreen() {
@@ -25,7 +25,7 @@ fun HomeScreen() {
   ) {
     item { InstagramToolBar() }
     item { StoryList(stories = storiesList) }
-    item { HorizontalDivider(thickness = 0.2.dp, color = DividerColor) }
+    item { HorizontalDivider(thickness = 0.2.dp, color = MaterialTheme.colorScheme.onSurface) }
 
     feedList(feeds = feedList)
   }
@@ -49,5 +49,15 @@ fun LazyListScope.feedList(feeds: List<Feed>) {
 @Preview(showBackground = true)
 @Composable
 fun HomeScreenPreview() {
-  HomeScreen()
+  InstagramTheme() {
+    HomeScreen()
+  }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun HomeScreenPreviewDark() {
+  InstagramTheme(darkTheme = true) {
+    HomeScreen()
+  }
 }
