@@ -22,6 +22,7 @@ import androidx.compose.ui.unit.dp
 import br.dev.franklin.instagram.R
 import br.dev.franklin.instagram.data.model.Story
 import br.dev.franklin.instagram.data.repository.storiesList
+import br.dev.franklin.instagram.ui.theme.InstagramTheme
 import br.dev.franklin.instagram.ui.theme.StoryCircleColor
 import br.dev.franklin.instagram.ui.theme.spacingSmall
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
@@ -64,5 +65,15 @@ fun StoryItem(story: Story) {
 @Preview(showBackground = true)
 @Composable
 fun StoryItemPreview() {
-  StoryItem(story = storiesList[0])
+  InstagramTheme {
+    StoryItem(story = storiesList[0])
+  }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun StoryItemPreviewDark() {
+  InstagramTheme(darkTheme = true) {
+    StoryItem(story = storiesList[1])
+  }
 }

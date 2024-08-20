@@ -18,6 +18,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -31,7 +32,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import br.dev.franklin.instagram.R
 import br.dev.franklin.instagram.data.model.Feed
+import br.dev.franklin.instagram.data.repository.feedList
 import br.dev.franklin.instagram.ui.theme.Gray
+import br.dev.franklin.instagram.ui.theme.InstagramTheme
 import br.dev.franklin.instagram.ui.theme.spacingLarge
 import br.dev.franklin.instagram.ui.theme.spacingMedium
 import br.dev.franklin.instagram.ui.theme.spacingSmall
@@ -53,6 +56,8 @@ fun FeedItem(feed: Feed) {
   val commentContentDesc = stringResource(R.string.content_description_comment_button)
   val messageContentDesc = stringResource(R.string.content_description_message_button)
   val bookmarkContentDesc = stringResource(R.string.content_description_bookmark_button)
+
+  val iconsColor =MaterialTheme.colorScheme.onBackground
 
   Column(modifier = Modifier.background(MaterialTheme.colorScheme.background)) {
     Row(
@@ -121,7 +126,8 @@ fun FeedItem(feed: Feed) {
           .size(40.dp)
           .padding(end = spacingMedium)
           .weight(1f)
-          .wrapContentWidth(align = Alignment.End)
+          .wrapContentWidth(align = Alignment.End),
+        colorFilter = ColorFilter.tint(iconsColor)
       )
     }
 
@@ -169,21 +175,27 @@ fun FeedIcons(
     contentDescription = contentDescription,
     modifier = Modifier
       .size(40.dp)
-      .padding(end = spacingLarge)
+      .padding(end = spacingLarge),
+    colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.onBackground)
   )
 }
 
 @Preview(showBackground = true)
 @Composable
 fun FeedItemPreview() {
-  FeedItem(
-    feed = Feed(
-      userNickName = "John Deere",
-      localName = "Brasil zil zil zil zil zil zil zil zil zil zil zil",
-      userAvatar = "",
-      imageUrl = "",
-      description = "",
-      postedAgo = "há 2 dias"
+  InstagramTheme {
+    FeedItem(
+      feed = feedList[0]
     )
-  )
+  }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun FeedItemPreviewDark() {
+  InstagramTheme(darkTheme = true) {
+    FeedItem(
+      feed = feedList[1]
+    )
+  }
 }

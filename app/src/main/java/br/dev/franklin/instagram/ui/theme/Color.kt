@@ -12,4 +12,5 @@ val Pink40 = Color(0xFF7D5260)
 
 val StoryCircleColor = Color(0xffff6347)
 val DividerColor = Color(0xffc9c9c9)
+val DividerColorDark = Color(0xff343434)
 val Gray = Color(0xff808080)
