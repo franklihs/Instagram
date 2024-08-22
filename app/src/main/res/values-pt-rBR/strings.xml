@@ -13,4 +13,6 @@
     <string name="button_comment_toast">Clicou para comentar no post</string>
     <string name="button_message_toast">Clicou para enviar o post</string>
     <string name="button_bookmark_toast">Clicou para salvar o post</string>
+    <string name="button_notification_toast">Clicou para ir para a página de Notificações</string>
+    <string name="button_DM_toast">Clicou para ir para a página de Menssagens Diretas (DM)</string>
 </resources>

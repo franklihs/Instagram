@@ -12,4 +12,6 @@
     <string name="button_comment_toast">Clicked to comment on post</string>
     <string name="button_message_toast">Clicked to send the post</string>
     <string name="button_bookmark_toast">Click to bookmark the post</string>
+    <string name="button_notification_toast">Clicked to go to Notifications page</string>
+    <string name="button_DM_toast">Clicked to go to Direct Messages page</string>
 </resources>

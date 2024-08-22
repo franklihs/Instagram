@@ -1,7 +1,9 @@
 package br.dev.franklin.instagram.ui.view
 
+import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.height
@@ -14,6 +16,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
@@ -29,6 +32,14 @@ fun InstagramToolBar() {
   val instagramLabel = stringResource(id = R.string.app_name)
 
   val iconsColor = MaterialTheme.colorScheme.onBackground
+
+  val notificationContentDesc = stringResource(R.string.content_description_notification_icon)
+  val directMessageContentDesc = stringResource(R.string.content_description_message_button)
+  val notificationToastText = stringResource(R.string.button_notification_toast)
+  val directMessageToastText = stringResource(R.string.button_DM_toast)
+
+  val context = LocalContext.current
+  val duration = Toast.LENGTH_SHORT
 
   Box(
     modifier = Modifier
@@ -52,16 +63,24 @@ fun InstagramToolBar() {
         painter = painterResource(R.drawable.ic_notification),
         modifier = Modifier
           .size(32.dp)
-          .padding(end = spacingMedium),
-        contentDescription = stringResource(R.string.content_description_notification_icon),
+          .padding(end = spacingMedium)
+          .clickable {
+            val toast = Toast.makeText(context, notificationToastText, duration)
+            toast.show()
+          },
+        contentDescription = notificationContentDesc,
         colorFilter = ColorFilter.tint(iconsColor)
       )
       Image(
         painter = painterResource(R.drawable.ic_message),
         modifier = Modifier
           .size(32.dp)
-          .padding(start = spacingMedium),
-        contentDescription = stringResource(R.string.content_description_message_icon),
+          .padding(start = spacingMedium)
+          .clickable {
+            val toast = Toast.makeText(context, directMessageToastText, duration)
+            toast.show()
+          },
+        contentDescription = directMessageContentDesc,
         colorFilter = ColorFilter.tint(iconsColor)
       )
     }
