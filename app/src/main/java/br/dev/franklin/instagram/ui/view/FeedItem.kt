@@ -143,19 +143,13 @@ fun FeedItem(feed: Feed) {
         icon = commentIcon,
         contentDescription = commentContentDesc,
         color = iconsColor
-      ) {
-        val toast = Toast.makeText(context, commentToastText, duration)
-        toast.show()
-      }
+      ) { Toast.makeText(context, commentToastText, duration).show() }
 
       FeedIcons(
         icon = messageIcon,
         contentDescription = messageContentDesc,
         color = iconsColor
-      ) {
-        val toast = Toast.makeText(context, messageToastText, duration)
-        toast.show()
-      }
+      ) { Toast.makeText(context, messageToastText, duration).show() }
 
       Image(
         painter = painterResource(id = bookmarkIcon),
@@ -165,10 +159,7 @@ fun FeedItem(feed: Feed) {
           .padding(end = spacingMedium)
           .weight(1f)
           .wrapContentWidth(align = Alignment.End)
-          .clickable {
-            val toast = Toast.makeText(context, bookmarkToastText, duration)
-            toast.show()
-          },
+          .clickable { Toast.makeText(context, bookmarkToastText, duration).show() },
         colorFilter = ColorFilter.tint(iconsColor)
       )
     }

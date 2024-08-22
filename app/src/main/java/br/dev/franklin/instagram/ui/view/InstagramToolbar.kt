@@ -29,10 +29,12 @@ import br.dev.franklin.instagram.ui.theme.spacingMedium
 @Composable
 fun InstagramToolBar() {
 
-  val instagramLabel = stringResource(id = R.string.app_name)
-
   val iconsColor = MaterialTheme.colorScheme.onBackground
 
+  val notificationsIcon = painterResource(R.drawable.ic_notification)
+  val directMessagesIcon = painterResource(R.drawable.ic_message)
+
+  val instagramLabel = stringResource(id = R.string.app_name)
   val notificationContentDesc = stringResource(R.string.content_description_notification_icon)
   val directMessageContentDesc = stringResource(R.string.content_description_message_button)
   val notificationToastText = stringResource(R.string.button_notification_toast)
@@ -60,26 +62,20 @@ fun InstagramToolBar() {
       )
 
       Image(
-        painter = painterResource(R.drawable.ic_notification),
+        painter = notificationsIcon,
         modifier = Modifier
           .size(32.dp)
           .padding(end = spacingMedium)
-          .clickable {
-            val toast = Toast.makeText(context, notificationToastText, duration)
-            toast.show()
-          },
+          .clickable { Toast.makeText(context, notificationToastText, duration).show() },
         contentDescription = notificationContentDesc,
         colorFilter = ColorFilter.tint(iconsColor)
       )
       Image(
-        painter = painterResource(R.drawable.ic_message),
+        painter = directMessagesIcon,
         modifier = Modifier
           .size(32.dp)
           .padding(start = spacingMedium)
-          .clickable {
-            val toast = Toast.makeText(context, directMessageToastText, duration)
-            toast.show()
-          },
+          .clickable { Toast.makeText(context, directMessageToastText, duration).show() },
         contentDescription = directMessageContentDesc,
         colorFilter = ColorFilter.tint(iconsColor)
       )
