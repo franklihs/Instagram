@@ -1,5 +1,6 @@
 package br.dev.franklin.instagram.ui.view
 
+import android.widget.Toast
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -26,6 +27,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.SpanStyle
@@ -63,6 +65,9 @@ fun FeedItem(feed: Feed) {
   val commentContentDesc = stringResource(R.string.content_description_comment_button)
   val messageContentDesc = stringResource(R.string.content_description_message_button)
   val bookmarkContentDesc = stringResource(R.string.content_description_bookmark_button)
+  val commentToastText = stringResource(id = R.string.button_comment_toast)
+  val messageToastText = stringResource(id = R.string.button_message_toast)
+  val bookmarkToastText = stringResource(id = R.string.button_bookmark_toast)
 
   var isLiked by rememberSaveable {
     mutableStateOf(false)
@@ -70,6 +75,9 @@ fun FeedItem(feed: Feed) {
 
   val iconsColor = MaterialTheme.colorScheme.onBackground
   val likedColor = if (isLiked) Color.Red else iconsColor
+
+  val context = LocalContext.current
+  val duration = Toast.LENGTH_SHORT
 
   Column(modifier = Modifier.background(MaterialTheme.colorScheme.background)) {
     Row(
@@ -131,9 +139,23 @@ fun FeedItem(feed: Feed) {
         color = likedColor
       ) { isLiked = !isLiked }
 
-      FeedIcons(icon = commentIcon, contentDescription = commentContentDesc, color = iconsColor) {}
+      FeedIcons(
+        icon = commentIcon,
+        contentDescription = commentContentDesc,
+        color = iconsColor
+      ) {
+        val toast = Toast.makeText(context, commentToastText, duration)
+        toast.show()
+      }
 
-      FeedIcons(icon = messageIcon, contentDescription = messageContentDesc, color = iconsColor) {}
+      FeedIcons(
+        icon = messageIcon,
+        contentDescription = messageContentDesc,
+        color = iconsColor
+      ) {
+        val toast = Toast.makeText(context, messageToastText, duration)
+        toast.show()
+      }
 
       Image(
         painter = painterResource(id = bookmarkIcon),
@@ -142,7 +164,11 @@ fun FeedItem(feed: Feed) {
           .size(40.dp)
           .padding(end = spacingMedium)
           .weight(1f)
-          .wrapContentWidth(align = Alignment.End),
+          .wrapContentWidth(align = Alignment.End)
+          .clickable {
+            val toast = Toast.makeText(context, bookmarkToastText, duration)
+            toast.show()
+          },
         colorFilter = ColorFilter.tint(iconsColor)
       )
     }
