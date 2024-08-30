@@ -21,13 +21,15 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import br.dev.franklin.instagram.R
 import br.dev.franklin.instagram.ui.theme.InstagramTheme
 import br.dev.franklin.instagram.ui.theme.spacingLarge
 import br.dev.franklin.instagram.ui.theme.spacingMedium
 
 @Composable
-fun InstagramToolBar() {
+fun InstagramToolBar(navController: NavController) {
 
   val iconsColor = MaterialTheme.colorScheme.onBackground
 
@@ -66,7 +68,11 @@ fun InstagramToolBar() {
         modifier = Modifier
           .size(32.dp)
           .padding(end = spacingMedium)
-          .clickable { Toast.makeText(context, notificationToastText, duration).show() },
+          .clickable {
+            Toast
+              .makeText(context, notificationToastText, duration)
+              .show()
+          },
         contentDescription = notificationContentDesc,
         colorFilter = ColorFilter.tint(iconsColor)
       )
@@ -75,7 +81,7 @@ fun InstagramToolBar() {
         modifier = Modifier
           .size(32.dp)
           .padding(start = spacingMedium)
-          .clickable { Toast.makeText(context, directMessageToastText, duration).show() },
+          .clickable { navController.navigate("messagesScreen") },
         contentDescription = directMessageContentDesc,
         colorFilter = ColorFilter.tint(iconsColor)
       )
@@ -87,7 +93,7 @@ fun InstagramToolBar() {
 @Composable
 fun InstagramToolbarPreview() {
   InstagramTheme {
-    InstagramToolBar()
+    InstagramToolBar(navController = rememberNavController())
   }
 }
 
@@ -95,6 +101,6 @@ fun InstagramToolbarPreview() {
 @Composable
 fun InstagramToolbarPreviewDark() {
   InstagramTheme(darkTheme = true) {
-    InstagramToolBar()
+    InstagramToolBar(navController = rememberNavController())
   }
 }

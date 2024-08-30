@@ -66,4 +66,7 @@ dependencies {
 
   //Glide
   implementation(libs.glide.compose)
+
+  //Compose Navigation
+  implementation(libs.compose.navigation)
 }

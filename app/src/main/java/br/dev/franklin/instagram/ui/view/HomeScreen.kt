@@ -11,6 +11,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import br.dev.franklin.instagram.data.model.Feed
 import br.dev.franklin.instagram.data.model.Story
 import br.dev.franklin.instagram.data.repository.feedList
@@ -18,12 +20,12 @@ import br.dev.franklin.instagram.data.repository.storiesList
 import br.dev.franklin.instagram.ui.theme.InstagramTheme
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(navController: NavController) {
 
   LazyColumn(
     modifier = Modifier.background(MaterialTheme.colorScheme.background)
   ) {
-    item { InstagramToolBar() }
+    item { InstagramToolBar(navController = navController) }
     item { StoryList(stories = storiesList) }
     item { HorizontalDivider(thickness = 0.2.dp, color = MaterialTheme.colorScheme.onSurface) }
 
@@ -50,7 +52,7 @@ fun LazyListScope.feedList(feeds: List<Feed>) {
 @Composable
 fun HomeScreenPreview() {
   InstagramTheme() {
-    HomeScreen()
+    HomeScreen(navController = rememberNavController())
   }
 }
 
@@ -58,6 +60,6 @@ fun HomeScreenPreview() {
 @Composable
 fun HomeScreenPreviewDark() {
   InstagramTheme(darkTheme = true) {
-    HomeScreen()
+    HomeScreen(navController = rememberNavController())
   }
 }
