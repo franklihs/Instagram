@@ -25,7 +25,7 @@ class MainActivity : ComponentActivity() {
           }
 
           composable(route = "messagesScreen") {
-            MessagesScreen()
+            MessagesScreen(navController = navController)
           }
         }
       }
