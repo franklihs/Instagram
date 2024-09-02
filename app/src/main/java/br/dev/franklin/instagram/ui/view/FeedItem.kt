@@ -5,6 +5,7 @@ import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
@@ -26,6 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
@@ -123,7 +125,10 @@ fun FeedItem(feed: Feed) {
       modifier = Modifier
         .padding(top = spacingLarge)
         .height(256.dp)
-        .fillMaxWidth(),
+        .fillMaxWidth()
+        .pointerInput(Unit) {
+          detectTapGestures(onDoubleTap = { if(isLiked) !isLiked else !isLiked})
+        },
       contentScale = ContentScale.Crop
     )
 
@@ -159,7 +164,11 @@ fun FeedItem(feed: Feed) {
           .padding(end = spacingMedium)
           .weight(1f)
           .wrapContentWidth(align = Alignment.End)
-          .clickable { Toast.makeText(context, bookmarkToastText, duration).show() },
+          .clickable {
+            Toast
+              .makeText(context, bookmarkToastText, duration)
+              .show()
+          },
         colorFilter = ColorFilter.tint(iconsColor)
       )
     }
