@@ -127,7 +127,7 @@ fun FeedItem(feed: Feed) {
         .height(256.dp)
         .fillMaxWidth()
         .pointerInput(Unit) {
-          detectTapGestures(onDoubleTap = { if(isLiked) !isLiked else !isLiked})
+          detectTapGestures(onDoubleTap = { isLiked = !isLiked })
         },
       contentScale = ContentScale.Crop
     )
