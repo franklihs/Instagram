@@ -11,7 +11,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import br.dev.franklin.instagram.ui.theme.InstagramTheme
 
 @Composable
 fun MessagesScreen(navController: NavController) {
@@ -29,5 +32,26 @@ fun MessagesScreen(navController: NavController) {
         Text(text = "Back to Home Screen")
       }
     }
+    item {
+      Button(onClick = { /*TODO*/ }) {
+        
+      }
+    }
+  }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun MessagesScreenPreview() {
+  InstagramTheme() {
+    MessagesScreen(navController = rememberNavController())
+  }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun MessagesScreenPreviewDark() {
+  InstagramTheme(darkTheme = true) {
+    MessagesScreen(navController = rememberNavController())
   }
 }
