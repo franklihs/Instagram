@@ -2,6 +2,7 @@ package br.dev.franklin.instagram.data.repository
 
 import br.dev.franklin.instagram.data.model.Feed
 import br.dev.franklin.instagram.data.model.Story
+import br.dev.franklin.instagram.data.model.User
 
 val storiesList = listOf(
   Story(
@@ -252,4 +253,15 @@ val feedList = listOf(
     description = "Olhos de cigana oblíqua dissimulada. Eu não sabia o que era oblíqua, mas dissimulada...",
     postedAgo = "Há 21 horas"
   )
+)
+
+val defaultUser = User(
+  userId = "123abc456def",
+  name = "Default User",
+  avatarUrl = null,
+  age = 31,
+  score = 900,
+  registerDate = "01/01/2001",
+  email = "default@user.com",
+  bio = "Just a guy like everyone else",
 )
