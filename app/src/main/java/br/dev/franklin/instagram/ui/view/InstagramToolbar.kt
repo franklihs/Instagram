@@ -29,7 +29,7 @@ import br.dev.franklin.instagram.ui.theme.spacingLarge
 import br.dev.franklin.instagram.ui.theme.spacingMedium
 
 @Composable
-fun InstagramToolBar(navController: NavController) {
+fun InstagramToolBar(navController: NavController, userName: String) {
 
   val iconsColor = MaterialTheme.colorScheme.onBackground
 
@@ -58,7 +58,7 @@ fun InstagramToolBar(navController: NavController) {
     ) {
 
       Text(
-        text = instagramLabel,
+        text = userName,
         modifier = Modifier.weight(1f),
         style = MaterialTheme.typography.headlineLarge
       )
@@ -81,7 +81,7 @@ fun InstagramToolBar(navController: NavController) {
         modifier = Modifier
           .size(32.dp)
           .padding(start = spacingMedium)
-          .clickable { navController.navigate("messagesScreen") },
+          .clickable { navController.navigate("messagesScreen/$userName") },
         contentDescription = directMessageContentDesc,
         colorFilter = ColorFilter.tint(iconsColor)
       )
@@ -93,7 +93,7 @@ fun InstagramToolBar(navController: NavController) {
 @Composable
 fun InstagramToolbarPreview() {
   InstagramTheme {
-    InstagramToolBar(navController = rememberNavController())
+    InstagramToolBar(navController = rememberNavController(), "User Name")
   }
 }
 
@@ -101,6 +101,6 @@ fun InstagramToolbarPreview() {
 @Composable
 fun InstagramToolbarPreviewDark() {
   InstagramTheme(darkTheme = true) {
-    InstagramToolBar(navController = rememberNavController())
+    InstagramToolBar(navController = rememberNavController(), "User Name")
   }
 }

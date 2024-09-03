@@ -20,12 +20,12 @@ import br.dev.franklin.instagram.data.repository.storiesList
 import br.dev.franklin.instagram.ui.theme.InstagramTheme
 
 @Composable
-fun HomeScreen(navController: NavController) {
+fun HomeScreen(navController: NavController, userName: String) {
 
   LazyColumn(
     modifier = Modifier.background(MaterialTheme.colorScheme.background)
   ) {
-    item { InstagramToolBar(navController = navController) }
+    item { InstagramToolBar(navController = navController, userName) }
     item { StoryList(stories = storiesList) }
     item { HorizontalDivider(thickness = 0.2.dp, color = MaterialTheme.colorScheme.onSurface) }
 
@@ -52,7 +52,7 @@ fun LazyListScope.feedList(feeds: List<Feed>) {
 @Composable
 fun HomeScreenPreview() {
   InstagramTheme() {
-    HomeScreen(navController = rememberNavController())
+    HomeScreen(navController = rememberNavController(), "User Name")
   }
 }
 
@@ -60,6 +60,6 @@ fun HomeScreenPreview() {
 @Composable
 fun HomeScreenPreviewDark() {
   InstagramTheme(darkTheme = true) {
-    HomeScreen(navController = rememberNavController())
+    HomeScreen(navController = rememberNavController(), "User Name")
   }
 }
