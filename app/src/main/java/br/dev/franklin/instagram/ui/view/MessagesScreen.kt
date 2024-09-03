@@ -51,7 +51,7 @@ fun MessagesScreen(navController: NavController, userName: String) {
       Column(modifier = Modifier.fillParentMaxHeight(), verticalArrangement = Arrangement.Center)
       {
         Text(text = "You are in the Messages Screen")
-        Button(onClick = { navController.navigate("homeScreen") }) {
+        Button(onClick = { navController.navigate("homeScreen/$userName") }) {
           Text(text = "Back to Home Screen")
         }
       }

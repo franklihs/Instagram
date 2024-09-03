@@ -58,7 +58,7 @@ fun InstagramToolBar(navController: NavController, userName: String) {
     ) {
 
       Text(
-        text = userName,
+        text = instagramLabel,
         modifier = Modifier.weight(1f),
         style = MaterialTheme.typography.headlineLarge
       )

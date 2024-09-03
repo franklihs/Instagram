@@ -25,7 +25,7 @@ fun SetupNavGraph(navController: NavHostController) {
         nullable = true
       }
     )) {
-      HomeScreen(navController = navController, TEXT)
+      HomeScreen(navController = navController, userName = it.arguments?.getString(TEXT) ?: "")
     }
 
     composable(route = Screens.MessagesScreen.route, arguments = listOf(
@@ -35,7 +35,7 @@ fun SetupNavGraph(navController: NavHostController) {
         nullable = true
       }
     )) {
-      MessagesScreen(navController = navController, TEXT)
+      MessagesScreen(navController = navController, userName = it.arguments?.getString(TEXT) ?: "")
     }
 
   }
