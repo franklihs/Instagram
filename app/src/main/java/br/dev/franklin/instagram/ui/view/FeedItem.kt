@@ -1,5 +1,6 @@
 package br.dev.franklin.instagram.ui.view
 
+import android.content.Intent
 import android.widget.Toast
 import androidx.annotation.DrawableRes
 import androidx.compose.foundation.Image
@@ -81,6 +82,15 @@ fun FeedItem(feed: Feed) {
   val context = LocalContext.current
   val duration = Toast.LENGTH_SHORT
 
+  //Share post
+  val sendIntent: Intent = Intent().apply {
+    action = Intent.ACTION_SEND
+    putExtra(Intent.EXTRA_TEXT, "Sending post from ${feed.userNickName}.")
+    type = "text/plain"
+  }
+  val shareIntent = Intent.createChooser(sendIntent, null)
+  val shareContext = LocalContext.current
+
   Column(modifier = Modifier.background(MaterialTheme.colorScheme.background)) {
     Row(
       modifier = Modifier
@@ -154,7 +164,7 @@ fun FeedItem(feed: Feed) {
         icon = messageIcon,
         contentDescription = messageContentDesc,
         color = iconsColor
-      ) { Toast.makeText(context, messageToastText, duration).show() }
+      ) { shareContext.startActivity(shareIntent) }
 
       Image(
         painter = painterResource(id = bookmarkIcon),
