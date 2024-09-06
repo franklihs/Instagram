@@ -6,252 +6,98 @@ import br.dev.franklin.instagram.data.model.User
 
 val storiesList = listOf(
   Story(
-    userNickName = "johndeere",
-    userAvatar = "https://www.tecnologiahorticola.com/wp-content/uploads/2024/03/01_John-Deere-S7-900-combine-harvesting-wheat-min-1280x640.jpg"
+    userNickName = "anabanana",
+    userAvatar = "https://images.pexels.com/photos/27064278/pexels-photo-27064278/free-photo-of-mar-praia-litoral-areia.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
   ), Story(
-    userNickName = "alexturner",
-    userAvatar = "https://collectionimages.npg.org.uk/large/mw263083/Alex-Turner.jpg"
+    userNickName = "monkeyman",
+    userAvatar = "https://images.pexels.com/photos/15030608/pexels-photo-15030608/free-photo-of-animal-bicho-retrato-macaco.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
   ), Story(
-    userNickName = "joji",
-    userAvatar = "https://akamai.sscdn.co/tb/letras-blog/wp-content/uploads/2022/07/4930a5e-Joji-1024x741.jpg"
+    userNickName = "kitty",
+    userAvatar = "https://images.pexels.com/photos/15442329/pexels-photo-15442329/free-photo-of-animal-animal-de-estimacao-pet-sentado.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
   ), Story(
-    userNickName = "chevette",
-    userAvatar = "https://i.pinimg.com/736x/98/c8/80/98c88087cf3e0db1db4f67eaa9755ff9.jpg"
+    userNickName = "coralina",
+    userAvatar = "https://images.pexels.com/photos/28209510/pexels-photo-28209510/free-photo-of-moda-tendencia-pessoas-mulher.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
   ), Story(
-    userNickName = "tostao",
-    userAvatar = "https://static-img.zz.pt/history/imgS620I11658T20190122154103.png"
+    userNickName = "cowboy",
+    userAvatar = "https://images.pexels.com/photos/26976780/pexels-photo-26976780/free-photo-of-homem-seco-jaqueta-casaco.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
   ), Story(
-    userNickName = "barbaraliskov",
-    userAvatar = "https://www.ufrgs.br/enigma/wp-content/uploads/2021/11/20091222102310-0_0.jpg"
+    userNickName = "photobooth",
+    userAvatar = "https://images.pexels.com/photos/18111515/pexels-photo-18111515/free-photo-of-mulher-camera-maquina-parede.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
   ), Story(
-    userNickName = "cazuza",
-    userAvatar = "https://aventurasnahistoria.uol.com.br/media/uploads/personagem/cazuza_capa.jpg"
+    userNickName = "ourcouple",
+    userAvatar = "https://images.pexels.com/photos/27583533/pexels-photo-27583533/free-photo-of-preto-e-branco-p-b-casal-conjuges.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
   ), Story(
-    userNickName = "xurrasco_021",
-    userAvatar = "https://i.scdn.co/image/ab67706c0000da84196218f1a3b36ca7d57d890d"
+    userNickName = "lovephotography",
+    userAvatar = "https://images.pexels.com/photos/28129767/pexels-photo-28129767/free-photo-of-panorama-vista-paisagem-natureza.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
   ), Story(
-    userNickName = "jovemwerther",
-    userAvatar = "https://casadoestudo.com/wp-content/uploads/2023/01/Goethe.webp"
+    userNickName = "citylife",
+    userAvatar = "https://images.pexels.com/photos/27989044/pexels-photo-27989044/free-photo-of-cidade-meio-urbano-trafego-transito.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
   ), Story(
-    userNickName = "cruzeiro",
-    userAvatar = "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Cruzeiro_Esporte_Clube_%28logo%29.svg/1200px-Cruzeiro_Esporte_Clube_%28logo%29.svg.png"
+    userNickName = "surfinglife",
+    userAvatar = "https://images.pexels.com/photos/28177560/pexels-photo-28177560/free-photo-of-leve-luz-light-preto-e-branco.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
   ), Story(
-    userNickName = "winston",
-    userAvatar = "https://www.revistabula.com/wp/wp-content/uploads/2020/08/george_orwell.jpg"
-  ), Story(
-    userNickName = "neguinism",
-    userAvatar = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKha0-2mYtaU1fklbUA_aSDGYM4BMT--aeXYRi74vgHDSkuylwbkWpeGsYPofU1k3Ci8&usqp=CAU"
-  ), Story(
-    userNickName = "sloane", userAvatar = "https://i.redd.it/rmk3k21tcxu21.jpg"
-  ), Story(
-    userNickName = "xr320i",
-    userAvatar = "https://farm5.static.flickr.com/4071/4210989776_280d7bd40c.jpg"
-  ), Story(
-    userNickName = "capitu",
-    userAvatar = "https://s01.video.glbimg.com/x240/2882588.jpg",
-  ), Story(
-    userNickName = "kotlin",
-    userAvatar = "https://miro.medium.com/v2/resize:fit:1400/1*MCU8J5-roudxIIYt1U1J1A.jpeg"
-  ), Story(
-    userNickName = "bluepen",
-    userAvatar = "https://amazonasatual.com.br/wp-content/uploads/2019/11/manoel-gomes.jpg"
-  ), Story(
-    userNickName = "dumont", userAvatar = "https://jpimg.com.br/uploads/2019/09/santos-dumont.jpg"
-  ), Story(
-    userNickName = "noel", userAvatar = "https://www.mapadoceu.com.br/photo/astro/noel-rosa.jpg"
-  ), Story(
-    userNickName = "renato",
-    userAvatar = "https://uploads.metropoles.com/wp-content/uploads/2019/04/11191551/DSC7795a.jpeg"
-  ), Story(
-    userNickName = "deassis",
-    userAvatar = "https://cdn.brasildefato.com.br/media/d3e65c869db03180a7d34b1569ccdc04.jpg"
-  ), Story(
-    userNickName = "tricks&combo", userAvatar = "https://i.ytimg.com/vi/UNPuyZwrwXw/mqdefault.jpg"
-  ), Story(
-    userNickName = "lilisaac",
-    userAvatar = "https://www.infoescola.com/wp-content/uploads/2008/09/isaac-newton-328x450.jpg"
-  ), Story(
-    userNickName = "margarethamilton",
-    userAvatar = "https://afala.com.br/wp-content/uploads/Margaret_Hamilton_in_action.0.0-e1544014483854.jpg"
+    userNickName = "naturepictures",
+    userAvatar = "https://images.pexels.com/photos/27964937/pexels-photo-27964937/free-photo-of-leve-luz-light-alvorecer.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
   )
 )
 
 val feedList = listOf(
   Feed(
-    userNickName = "John Deere",
-    localName = "Brasil zil zil zil zil zil",
-    userAvatar = "https://www.deere.com/assets/images/common/our-company/history/JD_Trademark_Current_884x663.png",
-    imageUrl = "https://www.deere.es/assets/images/region-2/tractors/large/9r-series/9rx-490-640-9rx-r2g035179-large.jpg",
-    description = "Nossos 9RX 710, 770 e 830 são os tratores de produção mais potentes da John Deere. A combinação do motor JD18 com a nova transmissão e21 PST e os chassis redesenhados garantem uma potência de tração inigualável na barra de tração, tudo isso sem a necessidade de fluido para escapamento de veículos a diesel (DEF). Para você, mais potência significa implementos mais largos, menos tempo no campo e menos trabalho operacional, atingindo o máximo. Equipados com correntes de esteira de 30 polegadas, a largura total dos tratores é inferior a 3 metros.",
-    postedAgo = "Há 2 horas"
+    userNickName = "anabanana",
+    userAvatar = "https://images.pexels.com/photos/27064278/pexels-photo-27064278/free-photo-of-mar-praia-litoral-areia.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+    localName = "Beach",
+    imageUrl = "https://images.pexels.com/photos/11155263/pexels-photo-11155263.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+    description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    postedAgo = "21 hours ago"
   ), Feed(
-    userNickName = "alexturner",
-    userAvatar = "https://collectionimages.npg.org.uk/large/mw263083/Alex-Turner.jpg",
-    localName = "Sheffield - UK",
-    imageUrl = "https://www.rbsdirect.com.br/imagesrc/15217916.jpg?w=700",
-    description = "I wanna be your Ford Cortina I will never rust...",
-    postedAgo = "Há 21 horas"
+    userNickName = "coralina",
+    userAvatar = "https://images.pexels.com/photos/28209510/pexels-photo-28209510/free-photo-of-moda-tendencia-pessoas-mulher.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+    localName = "Forest",
+    imageUrl = "https://images.pexels.com/photos/18981044/pexels-photo-18981044/free-photo-of-panorama-vista-paisagem-natureza.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+    description = "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    postedAgo = "2 days ago"
   ), Feed(
-    userNickName = "joji",
-    userAvatar = "https://akamai.sscdn.co/tb/letras-blog/wp-content/uploads/2022/07/4930a5e-Joji-1024x741.jpg",
-    localName = "Osaka - Japão",
-    imageUrl = "https://i.ytimg.com/vi/FvOpPeKSf_4/maxresdefault.jpg",
-    description = "Perfect don't mean that it's working. So what can I do? Cause sometimes I look in her eyes and that's where I find a glimpse of us. And I try to fall for her touch. But I'm thinkin' of the way it was said I'm fine and said I moved on. I'm only here passin' time in her arms, hopin' I find a glimpse of us.",
-    postedAgo = "Há 2 dias"
+    userNickName = "kitty",
+    userAvatar = "https://images.pexels.com/photos/15442329/pexels-photo-15442329/free-photo-of-animal-animal-de-estimacao-pet-sentado.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+    localName = "Rock Mountain",
+    imageUrl = "https://images.pexels.com/photos/18870112/pexels-photo-18870112/free-photo-of-explorando-o-lago-mc-arthur-de-yoho.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+    description = "ah! those snowy mountains",
+    postedAgo = "4 days ago"
   ), Feed(
-    userNickName = "tricks&combo",
-    userAvatar = "https://i.ytimg.com/vi/UNPuyZwrwXw/mqdefault.jpg",
-    localName = "Rival vs Rival",
-    imageUrl = "https://www.deltager.no/img/6672/93308H3CL2D6J.jpg",
-    description = "Alan - Biohazard",
-    postedAgo = "Há 4 dias"
+    userNickName = "cowboy",
+    userAvatar = "https://images.pexels.com/photos/26976780/pexels-photo-26976780/free-photo-of-homem-seco-jaqueta-casaco.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+    localName = "Old arrowhead trail",
+    imageUrl = "https://images.pexels.com/photos/27367125/pexels-photo-27367125/free-photo-of-preto-e-branco-p-b-veado-animais-selvagens.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+    description = "Oh deer",
+    postedAgo = "10 hours ago"
   ), Feed(
-    userNickName = "chevette",
-    userAvatar = "https://i.pinimg.com/736x/98/c8/80/98c88087cf3e0db1db4f67eaa9755ff9.jpg",
-    localName = "Localiza ai",
-    imageUrl = "https://i0.wp.com/www.autocustom.com.br/wp-content/uploads/2017/05/a7ab71535e6118088d874a5ad20fcbb5.jpg?fit=1200%2C795&ssl=1",
-    description = "É necessário sempre acreditar que o sonho é possível, que o céu é o limite e você, truta, é imbatível. Que o tempo ruim vai passar, é só uma fase que o sofrimento alimenta mais a sua coragem que a sua família precisa de você, lado a lado se ganhar pra te apoiar se perder.",
-    postedAgo = "Há 10 horas"
-  ), Feed(
-    userNickName = "barbaraliskov",
-    userAvatar = "https://www.ufrgs.br/enigma/wp-content/uploads/2021/11/20091222102310-0_0.jpg",
-    localName = "Los Angeles - CA",
-    imageUrl = "https://stackify.com/wp-content/uploads/2018/04/SOLID-Principles-Liskov-Substitution-1-881x441-1.png",
-    description = "Princípio da Inversão de Liskov: um guia fundamental na programação orientada a objetos. Ele estabelece que as classes derivadas devem ser substituíveis por suas classes base, sem alterar o comportamento esperado do programa. Em outras palavras, se um código funciona com uma determinada classe, ele também deve funcionar com suas subclasses. Isso garante a consistência e a extensibilidade do sistema, evitando surpresas indesejadas. Mantenha suas classes em harmonia e construa um código sólido com a Inversão de Liskov.",
+    userNickName = "monkeyman",
+    userAvatar = "https://images.pexels.com/photos/15030608/pexels-photo-15030608/free-photo-of-animal-bicho-retrato-macaco.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+    localName = "Green forest",
+    imageUrl = "https://videos.pexels.com/video-files/10058358/10058358-sd_360_640_30fps.mp4",
+    description = "Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     postedAgo = "Há 22 horas"
   ), Feed(
-    userNickName = "tostao",
-    userAvatar = "https://static-img.zz.pt/history/imgS620I11658T20190122154103.png",
-    localName = "Belo Horizonte - MG",
-    imageUrl = "https://i.superesportes.com.br/wEPWY4M5T4JArv6VobXImoqp1-Y=/650x0/smart/imgsapp.mg.superesportes.com.br/app/noticia_126420360808/2022/12/31/3984997/dirceu-lopes-pele-e-tostao-reunidos-em-jogo-entre-cruzeiro-e-santos_1_360335.jpg",
-    description = "Grande dia!",
+    userNickName = "lovephotography",
+    userAvatar = "https://images.pexels.com/photos/28129767/pexels-photo-28129767/free-photo-of-panorama-vista-paisagem-natureza.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+    localName = "Sunflower crops",
+    imageUrl = "https://videos.pexels.com/video-files/26224650/11940583_360_640_25fps.mp4",
+    description = "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
+    postedAgo = "21 hours ago"
+  ), Feed(
+    userNickName = "surfinglife",
+    userAvatar = "https://images.pexels.com/photos/28177560/pexels-photo-28177560/free-photo-of-leve-luz-light-preto-e-branco.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+    localName = "somewhere out there",
+    imageUrl = "https://images.pexels.com/photos/28133538/pexels-photo-28133538/free-photo-of-pier-quebra-mar-preto-e-branco-p-b.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+    description = "Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur?",
     postedAgo = "Há 21 horas"
   ), Feed(
-    userNickName = "cazuza",
-    userAvatar = "https://aventurasnahistoria.uol.com.br/media/uploads/personagem/cazuza_capa.jpg",
-    localName = "Rio de Janeiro - RJ",
-    imageUrl = "https://img.youtube.com/vi/ZBwjT-3t2O8/0.jpg",
-    description = "EXAGERADO… Jogado aos teus pés, eu sou mesmo exagerado. Adoro um amor inventado!",
-    postedAgo = "Há 21 horas"
-  ), Feed(
-    userNickName = "jovemwerther",
-    userAvatar = "https://casadoestudo.com/wp-content/uploads/2023/01/Goethe.webp",
-    localName = "Frankfurt - Alemanha",
-    imageUrl = "https://brainly.com.br/_next/image?url=https%3A%2F%2Fpt-static.z-dn.net%2Ffiles%2Fd46%2F3c7459b8d9b596496031e2a527bf4967.jpg&w=1080&q=75",
-    description = "É verdade, meu amigo, que cada dia compreendo melhor quão insensato é vivermos a julgar os outros. De minha parte, tenho tanto que fazer para modificar-me a mim mesmo, tanto esforço a despender para acalmar as tempestades do meu coração!... Ah! eu deixarei de bom grado que os outros façam o que bem entendam, contanto que eles me deixem fazer o mesmo.",
-    postedAgo = "Há 5 dias"
-  ), Feed(
-    userNickName = "churrasco021",
-    userAvatar = "https://i.scdn.co/image/ab67706c0000da84196218f1a3b36ca7d57d890d",
-    localName = "021",
-    imageUrl = "https://portalpopclub.com.br/wp-content/uploads/2023/02/image-29.png",
-    description = "Quando eu te encontrar é sequencia de lovezin \uD83C\uDFB5",
-    postedAgo = "Há 5 horas"
-  ), Feed(
-    userNickName = "cruzeiro",
-    userAvatar = "https://logodetimes.com/wp-content/uploads/cruzeiro.png",
-    localName = "Belo Horizonte - MG",
-    imageUrl = "https://i.ytimg.com/vi/-TUNndiobJo/maxresdefault.jpg",
-    description = "Para relembrar a narração emblemática e emocionante do gol do título da Libertadores de 76, quando Joãozinho de forma “irresponsável” bateu a falta que era de Nelinho, provavelmente o melhor batedor de faltas do mundo naquela época. Durante a narração, o narrador Vilibaldo Alves relembra do nosso atacante Roberto Batata, que faleceu durante a libertadores daquele ano : - “O jogador Ortiz argentino reclama, fica na frente da bola, bastante catimbada, é boa, é Nelinho quem tem que bater! Tem que se afastar, tomar posição, meter o gringo com bola e tudo pra dentro do gol, bol… aaaaaaaadivinhe! Joãozinho pelo amor de Deus Joãozinho! Você Joãozinho, Joãozinho… que Roberto batata lá do céu abrace-o aqui na terra Joãozinho… nesse momento eu me lembro de Roberto Batata, ele que tanto lutou nessa libertadores pelo Cruzeiro faz o gol que o Brasil está comemorando, vamos agora esperar torcedor do Brasil… Cruzeiro 3, River Plate 2! O River quer brigar, mas o Cruzeiro ganha no futebol.”",
-    postedAgo = "Há 6 horas"
-  ), Feed(
-    userNickName = "neguinism",
-    userAvatar = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKha0-2mYtaU1fklbUA_aSDGYM4BMT--aeXYRi74vgHDSkuylwbkWpeGsYPofU1k3Ci8&usqp=CAU",
-    localName = "Por ai",
-    imageUrl = "https://versatille.com/wp-content/uploads/177640_284533_entre_os_jurados__destaque_para_o_brasileiro_neguin-1.jpg",
-    description = "Dance!",
-    postedAgo = "Há 7 dias"
-  ), Feed(
-    userNickName = "winston",
-    userAvatar = "https://www.revistabula.com/wp/wp-content/uploads/2020/08/george_orwell.jpg",
-    localName = "Oceania",
-    imageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj1Q3dCBj_-ztP3okvcBcVkSSj7rr9vuVUKQ&usqp=CAU",
-    description = "Liberdade é a liberdade de dizer que dois mais dois são quatro.",
-    postedAgo = "Há 2 dias"
-  ), Feed(
-    userNickName = "margarethamilton",
-    userAvatar = "https://afala.com.br/wp-content/uploads/Margaret_Hamilton_in_action.0.0-e1544014483854.jpg",
-    localName = "Indiana - EUA",
-    imageUrl = "https://aventurasnahistoria.uol.com.br/media/_versions/personagem/margaret_hamilton_capa_widelg.jpg",
-    description = "Na minha época não tinha autocomplete.",
-    postedAgo = "Há 9 dias"
-  ), Feed(
-    userNickName = "android",
-    userAvatar = "https://cdn-icons-png.flaticon.com/512/518/518705.png",
-    localName = "Linux",
-    imageUrl = "https://extelos.com/assets/images/blog/jetpack-compose.png",
-    description = "O Jetpack Compose é um framework moderno para desenvolvimento de interfaces de usuário no Android. Ele foi introduzido para simplificar e aprimorar a criação de aplicativos Android, fornecendo uma abordagem declarativa e mais intuitiva para construir interfaces de usuário. Com o Jetpack Compose, os desenvolvedores podem criar interfaces dinâmicas e responsivas usando Kotlin, aproveitando o poder da programação funcional e da reatividade.",
-    postedAgo = "Há 6 minutos"
-  ), Feed(
-    userNickName = "xr320i",
-    userAvatar = "https://farm5.static.flickr.com/4071/4210989776_280d7bd40c.jpg",
-    localName = "1993",
-    imageUrl = "https://revistafullpower.com.br/wp-content/uploads/2013/04/meu-carro-na-FULL-4.jpg",
-    description = "MK5",
-    postedAgo = "Há 3 dias"
-  ), Feed(
-    userNickName = "capitu",
-    userAvatar = "https://s01.video.glbimg.com/x240/2882588.jpg",
-    localName = "Tiradentes - MG",
-    imageUrl = "https://www1.folha.uol.com.br/folha/galeria/album/images/20081208-capitu1.jpg",
-    description = "Não sou nem boa nem má, sou a pessoa mais complicada que conheço.",
-    postedAgo = "Há 21 horas"
-  ), Feed(
-    userNickName = "kotlin",
-    userAvatar = "https://miro.medium.com/v2/resize:fit:1400/1*MCU8J5-roudxIIYt1U1J1A.jpeg",
-    localName = "Rússia",
-    imageUrl = "https://blog.logrocket.com/wp-content/uploads/2022/04/kotlin-scoping-functions.png",
-    description = "Kotlin Scope Functions (Funções de Escopo do Kotlin) são um conjunto de funções que permitem executar um bloco de código em um objeto com uma sintaxe concisa. Cada função tem uma forma de referenciar o objeto de contexto e um valor de retorno específico. Existem cinco delas: let, run, with, apply e also.",
-    postedAgo = "Há 5 horas"
-  ), Feed(
-    userNickName = "bluepen",
-    userAvatar = "https://amazonasatual.com.br/wp-content/uploads/2019/11/manoel-gomes.jpg",
-    localName = "Lá Ele - BA",
-    imageUrl = "https://www.bnews.com.br/media/_versions/julho_2023/manoel_gomes_l5dlzkh_widelg_widexl.jpg",
-    description = "Look, if you don't love me, so don't call me don't keep complaining to me.",
-    postedAgo = "Há 2 dias"
-  ), Feed(
-    userNickName = "dumont",
-    userAvatar = "https://jpimg.com.br/uploads/2019/09/santos-dumont.jpg",
-    localName = "Minas Gerais",
-    imageUrl = "https://oespecialista.com.br/wp-content/uploads/2021/10/santos-dumont-14-bis-voo-518x307.jpg",
-    description = "É com grande prazer que compartilho com vocês os emocionantes testes realizados com o 14bis, minha invenção revolucionária. Ao longo dessas jornadas pelos céus, tenho sido testemunha da evolução do voo e do incansável esforço para alcançar novas alturas. Os testes do 14bis têm sido momentos de desafio e superação, nos quais pude testemunhar a concretização de um sonho antigo: o sonho de ver o homem conquistando os ares de forma controlada.",
-    postedAgo = "Há 1 mês"
-  ), Feed(
-    userNickName = "sloane",
-    userAvatar = "https://i.redd.it/rmk3k21tcxu21.jpg",
-    localName = "USA",
-    imageUrl = "https://conteudo.imguol.com.br/c/entretenimento/ea/2016/09/27/cena-do-filme-curtindo-a-vida-adoidado-1986-de-john-hughes-1474995071751_v2_600x450.jpg.webp",
-    description = ":D",
-    postedAgo = "Há 2 dias"
-  ), Feed(
-    userNickName = "noel",
-    userAvatar = "https://www.mapadoceu.com.br/photo/astro/noel-rosa.jpg",
-    localName = "Vila Isabel",
-    imageUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoqh35QTclAixwAmaVRyvY2VmIXZB0LUpPan4SJUiUCyOClYK_Y86yhgUlgKivgODVdEw&usqp=CAU",
-    description = "Se alguma pessoa amiga pedir que você lhe diga se você me quer ou não. Diga que você me adora, que você lamenta e chora a nossa separação.\n\nÀs pessoas que eu detesto, diga sempre que eu não presto que meu lar é o botequim. Que eu arruinei sua vida, que eu não mereço a comida que você pagou pra mim.",
-    postedAgo = "Há 2 meses"
-  ), Feed(
-    userNickName = "lilisaac",
-    userAvatar = "https://www.infoescola.com/wp-content/uploads/2008/09/isaac-newton-328x450.jpg",
-    localName = "Woolsthorpe Manor - UK",
-    imageUrl = "https://realidadesimulada.com/wp-content/uploads/2018/03/1200_1490707998990_1458417944newton.jpg",
-    description = "Essa é mesmo uma bela peruca!",
-    postedAgo = "Há 8 dias"
-  ), Feed(
-    userNickName = "renato",
-    userAvatar = "https://uploads.metropoles.com/wp-content/uploads/2019/04/11191551/DSC7795a.jpeg",
-    localName = "Brasilia",
-    imageUrl = "https://hqrock.files.wordpress.com/2012/03/legiao_urbana-rampa-do-congresso.jpg",
-    description = "Quem me dera, ao menos uma vez, ter de volta todo o ouro que entreguei a quem conseguiu me convencer que era prova de amizade se alguém levasse embora até o que eu não tinha.",
-    postedAgo = "Há 2 dias"
-  ), Feed(
-    userNickName = "deassis",
-    userAvatar = "https://cdn.brasildefato.com.br/media/d3e65c869db03180a7d34b1569ccdc04.jpg",
-    localName = "Tiradentes - MG",
-    imageUrl = "https://i.pinimg.com/originals/2b/43/cf/2b43cf682ec5697cedcd6d75df3a7392.png",
-    description = "Olhos de cigana oblíqua dissimulada. Eu não sabia o que era oblíqua, mas dissimulada...",
-    postedAgo = "Há 21 horas"
+    userNickName = "ourcouple",
+    userAvatar = "https://images.pexels.com/photos/27583533/pexels-photo-27583533/free-photo-of-preto-e-branco-p-b-casal-conjuges.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+    localName = "By the city",
+    imageUrl = "https://images.pexels.com/photos/27703479/pexels-photo-27703479/free-photo-of-ceu-por-do-sol-feriado-ponto-de-referencia.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load",
+    description = "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?",
+    postedAgo = "5 days ago"
   )
 )
 
