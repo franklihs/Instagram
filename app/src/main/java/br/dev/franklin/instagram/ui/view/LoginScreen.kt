@@ -17,8 +17,10 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import br.dev.franklin.instagram.ui.theme.InstagramTheme
@@ -26,7 +28,8 @@ import br.dev.franklin.instagram.ui.theme.InstagramTheme
 @Composable
 fun LoginScreen(navController: NavController) {
 
-  var text by rememberSaveable { mutableStateOf("") }
+  var name by rememberSaveable { mutableStateOf("") }
+  var pass by rememberSaveable { mutableStateOf("") }
 
   Column(
     modifier = Modifier
@@ -36,17 +39,24 @@ fun LoginScreen(navController: NavController) {
     horizontalAlignment = Alignment.CenterHorizontally,
     verticalArrangement = Arrangement.Center,
   ) {
-    Text(text = "You are in the Login Screen", modifier = Modifier.padding(top = 16.dp))
+    Text(text = "Login", modifier = Modifier.padding(top = 16.dp), fontSize = 32.sp)
 
     OutlinedTextField(
-      value = text,
-      onValueChange = { text = it },
-      modifier = Modifier.padding(16.dp),
-      label = { Text("Please, enter your name to login...") })
+      value = name,
+      onValueChange = { name = it },
+      modifier = Modifier.padding(top = 16.dp),
+      label = { Text("Please, enter your name") })
+
+    OutlinedTextField(
+      value = pass,
+      visualTransformation = PasswordVisualTransformation(),
+      onValueChange = { pass = it },
+      modifier = Modifier.padding(bottom = 16.dp),
+      label = { Text("Please, enter your password") })
 
     Button(
       onClick = {
-        val userName = text.ifEmpty { "cara" }
+        val userName = name.ifEmpty { "User Name" }
         navController.navigate("homeScreen/$userName")
       },
       modifier = Modifier.padding(top = 16.dp)
@@ -61,6 +71,14 @@ fun LoginScreen(navController: NavController) {
 @Composable
 fun LoginScreenPreview() {
   InstagramTheme {
+    LoginScreen(navController = rememberNavController())
+  }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun LoginScreenPreviewDark() {
+  InstagramTheme(darkTheme = true) {
     LoginScreen(navController = rememberNavController())
   }
 }
